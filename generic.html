@@ -1,66 +1,234 @@
 <!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
-		<title>About Page - Faizahmad-S</title>
+		<title>About - Faizahmad-S</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+		<style>
+			/* ===== FORCE SAME BACKGROUND AS HOMEPAGE ===== */
+			body {
+				background-image: url("images/0_Background.jpg") !important;
+				background-size: cover;
+				background-position: center;
+				background-attachment: fixed;
+			}
+
+			/* ===== MAIN CONTENT CONTAINER ===== */
+			#main {
+				background: rgba(255, 255, 255, 0.95);
+				padding: 3rem;
+				border-radius: 4px;
+			}
+
+			/* ===== HERO SECTION ===== */
+			.about-hero {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				gap: 2rem;
+				margin-bottom: 3rem;
+			}
+
+			.about-photo-wrap {
+				flex: 0 0 260px;
+				text-align: center;
+			}
+
+			/* FIX IMAGE FIT */
+			.about-photo {
+				width: 240px;
+				height: 240px;
+				border-radius: 50%;
+				object-fit: cover;
+				object-position: center 18%;
+				border: 4px solid #1e252d;
+			}
+
+			.about-intro {
+				flex: 1;
+				min-width: 280px;
+			}
+
+			/* FIX NAME SIZE */
+			.about-intro h1 {
+				font-size: 4rem;
+				line-height: 1.1;
+				margin-bottom: 0.5rem;
+			}
+
+			.about-headline {
+				font-size: 1.1rem;
+				font-weight: 600;
+				margin-bottom: 1rem;
+			}
+
+			/* FIX TEXT SPACING */
+			#main .post p {
+				text-align: left;
+				line-height: 1.8;
+				color: #2b2b2b;
+			}
+
+			/* ===== CARDS ===== */
+			.about-card {
+				background: #ffffff;
+				padding: 2rem;
+				box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+				border-radius: 4px;
+				height: 100%;
+			}
+
+			/* ===== TAGS ===== */
+			.about-tags {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.6rem;
+				margin-top: 1rem;
+			}
+
+			.about-tag {
+				border: 1px solid #1e252d;
+				padding: 0.4rem 0.7rem;
+				font-size: 0.75rem;
+				font-weight: 700;
+				text-transform: uppercase;
+			}
+
+			/* ===== HIGHLIGHT ===== */
+			.about-highlight {
+				background: #ffffff;
+				padding: 2rem;
+				margin-top: 2rem;
+				box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+				border-left: 5px solid #1e252d;
+			}
+
+			@media screen and (max-width: 736px) {
+				.about-hero {
+					text-align: center;
+				}
+				.about-photo-wrap,
+				.about-intro {
+					flex: 1 1 100%;
+				}
+			}
+		</style>
 	</head>
+
 	<body class="is-preload">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+	<div id="wrapper">
 
-				<!-- Header -->
-					<header id="header">
-						<a href="index.html" class="logo">Portfolio</a>
-					</header>
+		<header id="header">
+			<a href="index.html" class="logo">Portfolio</a>
+		</header>
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li><a href="index.html">Projects</a></li>
-							<li class="active"><a href="generic.html">About</a></li>
-							<li><a href="elements.html">Contact</a></li>
-						</ul>
-						<ul class="icons">
-								<li><a href="https://www.linkedin.com/in/faizahmad-s/" target="_blank" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
-								<li><a href="https://github.com/Faizahmad-S" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-					</nav>
+		<nav id="nav">
+			<ul class="links">
+				<li><a href="index.html">Projects</a></li>
+				<li class="active"><a href="generic.html">About</a></li>
+				<li><a href="elements.html">Contact</a></li>
+			</ul>
+			<ul class="icons">
+				<li><a href="https://www.linkedin.com/in/faizahmad-s/" target="_blank" class="icon brands alt fa-linkedin"></a></li>
+				<li><a href="https://github.com/Faizahmad-S" target="_blank" class="icon brands alt fa-github"></a></li>
+			</ul>
+		</nav>
 
-				<!-- Main -->
-					<div id="main">
+		<div id="main">
 
-						<!-- Post -->
-							<section class="post">
-								<header class="major">
-									<h1>About</h1>
-								</header>
-								<p>Data-driven businesses often struggle to translate raw numbers into clear business direction, which results in missed growth opportunities and slow decision-making. I work as a Data Analyst / Business Analyst, helping organizations make confident decisions through structured sales analysis, KPI tracking, and financial reporting using SQL, Power BI, Excel, and Python. </p>
-								<p> In my retail sales project, I analyzed Year-over-Year performance to identify product-level growth patterns. Mountain-100 Silver (44) showed continuous growth -reaching ₹1,420,000 in 2013 with positive variance across both years. In contrast, Road-150 Red (62) demonstrated consistent decline, enabling clear product performance classification (📈 growth vs 📉 decrease). </p>
-								<p>I built dashboards tracking Total Sales, Recency, and Average Monthly Spend, and performed customer segmentation (VIP, Regular, New; age-based clusters below 20 to 50+). This helped uncover behavioral insights and revenue contribution patterns.  </p>
-								<p>My approach combines storytelling, clean dashboard design, and business thinking because I believe: “Data should simplify decisions, not complicate them.”    </p>
-								<p> I am currently open to full-time roles and internships in Data Analytics or Business Analysis.  Best way to connect: LinkedIn DM, email, or direct call.</p>
-							</section>
+			<section class="post">
 
+				<!-- HERO -->
+				<div class="about-hero">
+
+					<div class="about-photo-wrap">
+						<img src="images/Me.png" alt="Faiz Ahmad" class="about-photo" />
 					</div>
 
+					<div class="about-intro">
+						<h1>Faizanahmad.S</h1>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+						<p class="about-headline">
+							Data Analyst / Business Analyst focused on SQL, Power BI, Excel, and Python.
+						</p>
+
+						<p>
+							I build dashboards, reports, and analytical workflows that turn raw data into clear business insight. My work focuses on sales analysis, KPI tracking, segmentation, and decision-support reporting.
+						</p>
+
+						<ul class="actions">
+							<li><a href="https://www.linkedin.com/in/faizahmad-s/" target="_blank" class="button primary">LinkedIn</a></li>
+							<li><a href="https://github.com/Faizahmad-S" target="_blank" class="button">GitHub</a></li>
+							<li><a href="elements.html" class="button">Contact</a></li>
+						</ul>
+					</div>
+
+				</div>
+
+				<!-- TWO COLUMN -->
+				<div class="row">
+
+					<div class="col-6 col-12-small">
+						<div class="about-card">
+							<h2>About Me</h2>
+							<p>
+							I work on end-to-end data analytics projects that transform raw, fragmented datasets into structured, decision-ready insights. My focus is on solving real business problems such as identifying revenue drivers, customer behavior patterns, and performance trends.
+							</p>
+
+							<p>
+							Across my projects, I have built SQL-based analytics pipelines, performed exploratory analysis, and developed dashboards that highlight actionable insights rather than just reporting numbers.
+							</p>
+						</div>
+					</div>
+
+					<div class="col-6 col-12-small">
+						<div class="about-card">
+							<h2>What I Bring</h2>
+						<p>
+						I focus on turning data into insights that directly support business decisions. My work goes beyond analysis — I identify patterns, trends, and performance gaps that can guide strategy and improve outcomes.
+						</p>
+
+						<p>
+						I build end-to-end analytical workflows using SQL, Excel, and Power BI — from data cleaning and exploration to KPI tracking, segmentation, and dashboard reporting. My goal is always to make insights clear, actionable, and easy to use.
+						</p>
+
+						<p>
+						Example: Built a retail analytics solution that identified high-performing vs declining products using Year-over-Year analysis and customer segmentation.
+						</p>
+
+						<div class="about-tags">
+							<span class="about-tag">SQL</span>
+							<span class="about-tag">Power BI</span>
+							<span class="about-tag">Excel</span>
+							<span class="about-tag">Python</span>
+							<span class="about-tag">Data Analysis</span>
+							<span class="about-tag">Dashboards</span>
+							<span class="about-tag">KPI Tracking</span>
+						</div>
+						</div>
+					</div>
+
+				</div>
+
+				<!-- HIGHLIGHT -->
+				<div class="about-highlight">
+					<h2>My Approach</h2>
+					<p>
+						I focus on making data simple, practical, and decision-focused — not complex or overwhelming.
+					</p>
+				</div>
+
+			</section>
+
+		</div>
+
+	</div>
+
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/main.js"></script>
 
 	</body>
 </html>
