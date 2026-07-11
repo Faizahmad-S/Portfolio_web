@@ -6,11 +6,11 @@
 -->
 <html>
 	<head>
-		<title>Project Case Study - Faizahmad-S</title>
+		<title>Retail Sales Analytics - Faizahmad-S</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
 
 		<style>
 			.image-stack .image {
@@ -32,13 +32,13 @@
 
 			<!-- Header -->
 			<header id="header">
-				<a href="index.html" class="logo">Retail Sales Analytics</a>
+				<a href="../index.html" class="logo">Retail Sales Analytics</a>
 			</header>
 
 			<!-- Nav -->
 			<nav id="nav">
 				<ul class="links">
-					<li><a href="index.html">Projects</a></li>
+					<li><a href="../index.html">Projects</a></li>
 					<li class="active"><a href="#">Project Details</a></li>
 				</ul>
 			</nav>
@@ -51,7 +51,7 @@
 
 					<!-- Main Project Image -->
 					<div class="image main">
-						<img src="images/Retail Sales - Cover.png" alt="Project Cover Image" />
+						<img src="../images/Retail Sales - Cover.png" alt="Project Cover Image" />
 					</div>
 
 					<div class="row">
@@ -65,7 +65,7 @@
 							</p>
 
 							<h2>Tools</h2>
-							<p><strong>SQL | PostgreSQL | VS Code | Job Market Analytics</strong></p>
+							<p><strong>SQL | PostgreSQL | VS Code | Power BI | Data Modeling</strong></p>
 							
 
 							<h2>Summary</h2>
@@ -103,7 +103,7 @@
 							<h3>Project Links</h3>
 							<ul class="actions">
 								<li><a href="https://github.com/Faizahmad-S/Sales_Data-ETL_EDA_Reports-.git" target="_blank" class="button primary">View GitHub</a></li>
-								<li><a href="index.html" class="button">Back to Projects</a></li>
+								<li><a href="../index.html" class="button">Back to Projects</a></li>
 								<li><a href="#top" class="button scrolly">Back to Top</a></li>
 							</ul>
 
@@ -113,25 +113,25 @@
 						<div class="col-4 col-12-small image-stack">
 
 							<span class="image fit">
-								<img src="Project Image/Retail/(EDA) & KPIs.png" alt="Image1" />
+								<img src="../Project Image/Retail/(EDA) & KPIs.png" alt="Image1" />
 							</span>
 
 							<span class="image fit">
-								<img src="Project Image/Retail/Advanced Data Segmentation.png" alt="Image2" />
+								<img src="../Project Image/Retail/Advanced Data Segmentation.png" alt="Image2" />
 							</span>
 
 							
 
 							<span class="image fit">
-								<img src="Project Image/Retail/Customer Dashboard.png" alt="Image3" />
+								<img src="../Project Image/Retail/Customer Dashboard.png" alt="Image3" />
 							</span>
 
 							<span class="image fit">
-								<img src="Project Image/Retail/Product Dashboard.png" alt="Image4" />
+								<img src="../Project Image/Retail/Product Dashboard.png" alt="Image4" />
 							</span>
 
 							<span class="image fit">
-								<img src="Project Image/Retail/YoY.png" alt="Image5" />
+								<img src="../Project Image/Retail/YoY.png" alt="Image5" />
 							</span>
 						</div>
 
@@ -144,13 +144,92 @@
 		</div>
 
 		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
+		<script src="../assets/js/jquery.min.js"></script>
+		<script src="../assets/js/jquery.scrollex.min.js"></script>
+		<script src="../assets/js/jquery.scrolly.min.js"></script>
+		<script src="../assets/js/browser.min.js"></script>
+		<script src="../assets/js/breakpoints.min.js"></script>
+		<script src="../assets/js/util.js"></script>
+		<script src="../assets/js/main.js"></script>
+
+	
+	<!-- ===== Image Lightbox (click any project image to view full screen) ===== -->
+	<style>
+		#main .post .image img { cursor: zoom-in; transition: opacity 0.2s; }
+		#main .post .image img:hover { opacity: 0.9; }
+		.lightbox-overlay {
+			display: none;
+			position: fixed;
+			inset: 0;
+			z-index: 10000;
+			background: rgba(10, 12, 16, 0.95);
+			justify-content: center;
+			align-items: center;
+			padding: 2rem;
+			cursor: zoom-out;
+		}
+		.lightbox-overlay.open { display: flex; }
+		.lightbox-overlay img {
+			max-width: 95vw;
+			max-height: 92vh;
+			width: auto;
+			height: auto;
+			box-shadow: 0 10px 50px rgba(0,0,0,0.6);
+			border-radius: 4px;
+		}
+		.lightbox-close {
+			position: fixed;
+			top: 1rem;
+			right: 1.5rem;
+			font-size: 2.5rem;
+			line-height: 1;
+			color: #fff;
+			background: none;
+			border: none;
+			cursor: pointer;
+			z-index: 10001;
+			font-family: inherit;
+		}
+		.lightbox-hint {
+			position: fixed;
+			bottom: 1rem;
+			left: 50%;
+			transform: translateX(-50%);
+			color: rgba(255,255,255,0.6);
+			font-size: 0.8rem;
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+		}
+	</style>
+	<div class="lightbox-overlay" id="lightbox" role="dialog" aria-label="Full size image viewer">
+		<button class="lightbox-close" aria-label="Close">&times;</button>
+		<img src="" alt="" />
+		<span class="lightbox-hint">Click anywhere or press Esc to close</span>
+	</div>
+	<script>
+	(function () {
+		var overlay = document.getElementById('lightbox');
+		var overlayImg = overlay.querySelector('img');
+		var images = document.querySelectorAll('#main .post .image img');
+		images.forEach(function (img) {
+			img.addEventListener('click', function () {
+				overlayImg.src = img.src;
+				overlayImg.alt = img.alt || '';
+				overlay.classList.add('open');
+				document.body.style.overflow = 'hidden';
+			});
+		});
+		function closeLightbox() {
+			overlay.classList.remove('open');
+			overlayImg.src = '';
+			document.body.style.overflow = '';
+		}
+		overlay.addEventListener('click', closeLightbox);
+		document.addEventListener('keydown', function (e) {
+			if (e.key === 'Escape') closeLightbox();
+		});
+	})();
+	</script>
 
 	</body>
 </html>

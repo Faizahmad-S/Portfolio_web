@@ -1,81 +1,238 @@
 <!DOCTYPE HTML>
 <!--
 	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
 	<head>
 		<title>Contact - Faizahmad-S</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+		<style>
+			:root {
+				--ink: #1e252d;
+				--accent: #18bfef;
+				--muted: #7a8592;
+				--line: rgba(30, 37, 45, 0.12);
+			}
+
+			.contact-eyebrow {
+				font-family: "Courier New", monospace;
+				font-size: 0.75rem;
+				letter-spacing: 0.25em;
+				text-transform: uppercase;
+				color: var(--accent);
+				display: block;
+				margin-bottom: 0.75rem;
+			}
+
+			.contact-head h1 {
+				font-size: 3rem;
+				line-height: 1.1;
+				margin: 0 0 1rem 0;
+			}
+
+			.contact-head p {
+				text-align: left;
+				line-height: 1.9;
+				color: var(--muted);
+				max-width: 640px;
+				margin-bottom: 2.5rem;
+			}
+
+			/* ===== CONTACT CHANNEL CARDS ===== */
+			.channels {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 1.25rem;
+			}
+
+			.channel {
+				display: block;
+				border: solid 1px var(--line);
+				border-top: solid 3px var(--ink);
+				padding: 1.6rem 1.4rem;
+				text-decoration: none;
+				border-bottom: solid 1px var(--line) !important;
+				transition: border-top-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+			}
+
+			a.channel:hover {
+				border-top-color: var(--accent);
+				box-shadow: 0 6px 20px rgba(30, 37, 45, 0.08);
+			}
+
+			.channel i.label {
+				font-family: "Courier New", monospace;
+				font-style: normal;
+				font-size: 0.7rem;
+				letter-spacing: 0.2em;
+				text-transform: uppercase;
+				color: var(--accent);
+				display: block;
+				margin-bottom: 0.7rem;
+			}
+
+			.channel b {
+				display: block;
+				font-size: 1.05rem;
+				color: var(--ink);
+				margin-bottom: 0.4rem;
+				word-break: break-word;
+			}
+
+			.channel span {
+				font-size: 0.82rem;
+				color: var(--muted);
+				line-height: 1.6;
+			}
+
+			/* ===== SOCIAL ROW ===== */
+			.social-row {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: 1.25rem;
+				margin-top: 1.25rem;
+			}
+
+			.social-row .channel { text-align: left; }
+
+			/* ===== AVAILABILITY NOTE ===== */
+			.note {
+				margin-top: 3rem;
+				padding: 2rem 2.5rem;
+				background: var(--ink);
+				color: #ffffff;
+			}
+
+			.note .contact-eyebrow { margin-bottom: 0.6rem; }
+
+			.note p {
+				font-family: "Merriweather", Georgia, serif;
+				font-style: italic;
+				font-size: 1.1rem;
+				line-height: 1.8;
+				margin: 0;
+				color: #ffffff !important;
+				text-align: left;
+			}
+
+			@media screen and (max-width: 980px) {
+				.channels { grid-template-columns: 1fr; }
+				.social-row { grid-template-columns: 1fr; }
+				.contact-head h1 { font-size: 2.4rem; }
+				.note { padding: 1.6rem 1.4rem; }
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
-			<div id="wrapper">
+		<div id="wrapper">
 
-				<!-- Header -->
-					<header id="header">
-						<a href="index.html" class="logo">Portfolio</a>
-					</header>
+			<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="logo">Portfolio</a>
+			</header>
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li><a href="index.html">Projects</a></li>
-							<li><a href="generic.html">About</a></li>
-							<li class="active"><a href="elements.html">Contact</a></li>
-						</ul>
-						<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/faizahmad-s/" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
-							<li><a href="https://github.com/Faizahmad-S" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-					</nav>
-								
-				<!-- Footer -->
-					<footer id="footer">
-						<section class="split contact">
-							<section class="alt">
-								<h3>Address</h3>
-								<p>Harringay Road,<br />
-								London</p>
-							</section>
-							<section>
-								<h3>Phone</h3>
-								<p><a href="#">(+44) 744466874</a></p>
-							</section>
-							<section>
-								<h3>Email</h3>
-								<p><a href="mailto:faizsangolli07@gmail.com">faizsangolli07@gmail.com</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-								<li><a href="https://www.linkedin.com/in/faizahmad-s/" target="_blank" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
-								<li><a href="https://github.com/Faizahmad-S" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</section>
-						</section>
-					</footer>
+			<!-- Nav -->
+			<nav id="nav">
+				<ul class="links">
+					<li><a href="index.html">Projects</a></li>
+					<li><a href="generic.html">About</a></li>
+					<li class="active"><a href="elements.html">Contact</a></li>
+				</ul>
+				<ul class="icons">
+					<li><a href="https://www.linkedin.com/in/faizahmad-s/" target="_blank" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
+					<li><a href="https://github.com/Faizahmad-S" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+				</ul>
+			</nav>
 
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+			<!-- Main -->
+			<div id="main">
+
+				<section class="post">
+
+					<div class="contact-head">
+						<span class="contact-eyebrow">// get in touch</span>
+						<h1>Let's talk data.</h1>
+						<p>
+							Whether it's a role, a project, or a question about something in my
+							portfolio — I'm happy to hear from you. Email is the fastest way
+							to reach me.
+						</p>
 					</div>
+
+					<!-- DIRECT CHANNELS -->
+					<div class="channels">
+						<a class="channel" href="mailto:faizsangolli07@gmail.com">
+							<i class="label">email</i>
+							<b>faizsangolli07@gmail.com</b>
+							<span>Best for opportunities and project enquiries — I reply within a day.</span>
+						</a>
+						<a class="channel" href="tel:+44744466874">
+							<i class="label">phone</i>
+							<b>(+44) 744466874</b>
+							<span>Available for calls on weekdays, UK time.</span>
+						</a>
+						<div class="channel">
+							<i class="label">location</i>
+							<b>Harringay Road, London</b>
+							<span>Open to roles in London, hybrid, or remote.</span>
+						</div>
+					</div>
+
+					<!-- SOCIAL -->
+					<div class="social-row">
+						<a class="channel" href="https://www.linkedin.com/in/faizahmad-s/" target="_blank">
+							<i class="label">linkedin</i>
+							<b>in/faizahmad-s</b>
+							<span>Connect with me professionally and see my latest activity.</span>
+						</a>
+						<a class="channel" href="https://github.com/Faizahmad-S" target="_blank">
+							<i class="label">github</i>
+							<b>@Faizahmad-S</b>
+							<span>Browse the code and SQL behind every project on this site.</span>
+						</a>
+					</div>
+
+					<!-- NOTE -->
+					<div class="note">
+						<span class="contact-eyebrow">// currently</span>
+						<p>
+							Open to Data Analyst and Business Analyst opportunities —
+							and always up for talking about SQL, dashboards, and good data questions.
+						</p>
+					</div>
+
+					<!-- CTA -->
+					<hr style="margin-top: 3rem;" />
+					<ul class="actions" style="justify-content: center;">
+						<li><a href="index.html" class="button primary large">View My Projects</a></li>
+						<li><a href="generic.html" class="button large">About Me</a></li>
+					</ul>
+
+				</section>
 
 			</div>
 
+			<!-- Copyright -->
+			<div id="copyright">
+				<ul><li>&copy; Faizanahmad S</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+			</div>
+
+		</div>
+
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 
 	</body>
 </html>
