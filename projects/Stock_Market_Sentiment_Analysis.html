@@ -1,0 +1,291 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+-->
+<html>
+	<head>
+		<title>Stock Market Sentiment Analysis - Faizahmad-S</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+
+		<style>
+			.image-stack .image {
+				display:block;
+				margin-bottom:1.5rem;
+			}
+		</style>
+	</head>
+
+	<body class="is-preload">
+
+	<a id="top"></a>
+
+	<div id="wrapper">
+
+		<header id="header">
+			<a href="../index.html" class="logo">Sentiment Analysis</a>
+		</header>
+
+		<nav id="nav">
+			<ul class="links">
+				<li><a href="../index.html">Projects</a></li>
+				<li class="active"><a href="#">Project Details</a></li>
+			</ul>
+		</nav>
+
+		<div id="main">
+
+		<section class="post">
+
+		<div class="image main">
+			<img src="../images/Sentiment Analysis-Cover.png" alt="Stock Market Sentiment Analysis Cover"/>
+		</div>
+
+		<div class="row">
+
+		<!-- LEFT COLUMN -->
+		<div class="col-8 col-12-small">
+
+		<h2>Purpose</h2>
+
+		<p>
+		My MSc Data Analytics dissertation (Oxford Brookes University, 2024): can the sentiment of
+		financial news headlines tell us anything about short-term stock price movements?
+		</p>
+
+		<p>
+		The project compares two sentiment models on a labelled dataset, then applies the better-balanced
+		one to live headlines for Apple, with Amazon, Alphabet and Walmart as cross-sector comparisons.
+		</p>
+
+
+		<h2>Tools</h2>
+
+		<p><strong>Python | pandas | VADER | TextBlob | yfinance | GitHub Actions | Jupyter</strong></p>
+
+
+		<h2>Summary</h2>
+
+		<p>
+		I built an automated pipeline that scraped daily news headlines from Finviz on a schedule,
+		scored each headline's sentiment, and joined the results to historical prices from Yahoo Finance.
+		</p>
+
+		<p>
+		Before trusting either model, I benchmarked VADER and TextBlob against Kaggle's labelled
+		financial news dataset (4,846 headlines), then used the chosen model for an Apple case study
+		covering 10 to 22 September 2024.
+		</p>
+
+
+		<h2>Process</h2>
+
+		<ul>
+
+		<li>
+		Wrote a Python scraper for Finviz news tables and scheduled it to run daily with
+		<strong>GitHub Actions</strong>, saving each run as a timestamped CSV.
+		</li>
+
+		<li>
+		Merged, cleaned and de-duplicated the scraped files with <strong>pandas</strong>.
+		</li>
+
+		<li>
+		Scored every headline with <strong>VADER</strong> and <strong>TextBlob</strong> and bucketed scores
+		into positive, neutral and negative.
+		</li>
+
+		<li>
+		Evaluated both models against the labelled Kaggle dataset using accuracy, per-class F1 and
+		confusion matrices.
+		</li>
+
+		<li>
+		Pulled daily opening and closing prices with <strong>yfinance</strong> and compared Apple's daily
+		mean sentiment with its price movement.
+		</li>
+
+		</ul>
+
+
+		<h2>Key Insights</h2>
+
+		<ul>
+
+		<li>
+		TextBlob scored higher overall (<strong>58.5%</strong> vs <strong>55.0%</strong>) but only because it
+		labels most headlines neutral. Its negative-class F1 was just <strong>0.13</strong>.
+		</li>
+
+		<li>
+		VADER was far more balanced (negative F1 <strong>0.32</strong>, positive F1 <strong>0.51</strong>),
+		so I chose it as the primary model. Headline accuracy alone would have picked the wrong one.
+		</li>
+
+		<li>
+		Apple's sentiment and price moved together from 10 to 19 September, both rising and then falling.
+		</li>
+
+		<li>
+		The link broke at the <strong>iPhone 16 launch on 20 September 2024</strong>: the price rebounded
+		sharply while headline sentiment stayed negative.
+		</li>
+
+		<li>
+		Sentiment is a useful short-term signal but not a standalone predictor. General-purpose lexicons
+		also struggle with financial language, pointing to <strong>FinBERT</strong> as the next step.
+		</li>
+
+		</ul>
+
+
+		<h2>Outcome</h2>
+
+		<p>
+		A reproducible Python pipeline, from automated data collection to model evaluation and a
+		real-world case study, with every figure regenerable from the notebook in the repository.
+		</p>
+
+		<hr>
+
+		<h3>Project Links</h3>
+
+		<ul class="actions">
+		<li><a href="https://github.com/Faizahmad-S/stock_market_sentiment_analysis-Dissertation-" class="button primary" target="_blank">View GitHub</a></li>
+		<li><a href="https://github.com/Faizahmad-S/stock_market_sentiment_analysis-Dissertation-/blob/main/reports/MSc_Dissertation.pdf" class="button" target="_blank">Read Dissertation</a></li>
+		<li><a href="../index.html" class="button">Back to Projects</a></li>
+		<li><a href="#top" class="button scrolly">Back to Top</a></li>
+		</ul>
+
+		</div>
+
+
+		<!-- RIGHT COLUMN IMAGES -->
+		<div class="col-4 col-12-small image-stack">
+
+		<span class="image fit">
+		<img src="../Project Image/Sentiment/fig_model_accuracy_comparison.jpg" alt="VADER vs TextBlob accuracy comparison"/>
+		</span>
+
+		<span class="image fit">
+		<img src="../Project Image/Sentiment/fig10_vader_confusion_matrix.jpg" alt="VADER confusion matrix"/>
+		</span>
+
+		<span class="image fit">
+		<img src="../Project Image/Sentiment/fig06_aapl_sentiment_trend.jpg" alt="Apple daily sentiment trend"/>
+		</span>
+
+		<span class="image fit">
+		<img src="../Project Image/Sentiment/fig13_aapl_sentiment_vs_price.jpg" alt="Apple stock price, 10 to 22 September 2024"/>
+		</span>
+
+		<span class="image fit">
+		<img src="../Project Image/Sentiment/fig07_sentiment_heatmap.jpg" alt="Sentiment heat map by ticker and date"/>
+		</span>
+
+		<span class="image fit">
+		<img src="../Project Image/Sentiment/fig02_sentiment_comparison_stocks.jpg" alt="Sentiment distribution by stock"/>
+		</span>
+
+		</div>
+
+		</div>
+
+		</section>
+
+		</div>
+
+	</div>
+
+
+	<script src="../assets/js/jquery.min.js"></script>
+	<script src="../assets/js/jquery.scrollex.min.js"></script>
+	<script src="../assets/js/jquery.scrolly.min.js"></script>
+	<script src="../assets/js/browser.min.js"></script>
+	<script src="../assets/js/breakpoints.min.js"></script>
+	<script src="../assets/js/util.js"></script>
+	<script src="../assets/js/main.js"></script>
+
+	
+	<!-- ===== Image Lightbox (click any project image to view full screen) ===== -->
+	<style>
+		#main .post .image img { cursor: zoom-in; transition: opacity 0.2s; }
+		#main .post .image img:hover { opacity: 0.9; }
+		.lightbox-overlay {
+			display: none;
+			position: fixed;
+			inset: 0;
+			z-index: 10000;
+			background: rgba(10, 12, 16, 0.95);
+			justify-content: center;
+			align-items: center;
+			padding: 2rem;
+			cursor: zoom-out;
+		}
+		.lightbox-overlay.open { display: flex; }
+		.lightbox-overlay img {
+			max-width: 95vw;
+			max-height: 92vh;
+			width: auto;
+			height: auto;
+			box-shadow: 0 10px 50px rgba(0,0,0,0.6);
+			border-radius: 4px;
+		}
+		.lightbox-close {
+			position: fixed;
+			top: 1rem;
+			right: 1.5rem;
+			font-size: 2.5rem;
+			line-height: 1;
+			color: #fff;
+			background: none;
+			border: none;
+			cursor: pointer;
+			z-index: 10001;
+			font-family: inherit;
+		}
+		.lightbox-hint {
+			position: fixed;
+			bottom: 1rem;
+			left: 50%;
+			transform: translateX(-50%);
+			color: rgba(255,255,255,0.6);
+			font-size: 0.8rem;
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+		}
+	</style>
+	<div class="lightbox-overlay" id="lightbox" role="dialog" aria-label="Full size image viewer">
+		<button class="lightbox-close" aria-label="Close">&times;</button>
+		<img src="" alt="" />
+		<span class="lightbox-hint">Click anywhere or press Esc to close</span>
+	</div>
+	<script>
+	(function () {
+		var overlay = document.getElementById('lightbox');
+		var overlayImg = overlay.querySelector('img');
+		var images = document.querySelectorAll('#main .post .image img');
+		images.forEach(function (img) {
+			img.addEventListener('click', function () {
+				overlayImg.src = img.src;
+				overlayImg.alt = img.alt || '';
+				overlay.classList.add('open');
+				document.body.style.overflow = 'hidden';
+			});
+		});
+		function closeLightbox() {
+			overlay.classList.remove('open');
+			overlayImg.src = '';
+			document.body.style.overflow = '';
+		}
+		overlay.addEventListener('click', closeLightbox);
+		document.addEventListener('keydown', function (e) {
+			if (e.key === 'Escape') closeLightbox();
+		});
+	})();
+	</script>
+
+	</body>
+</html>
