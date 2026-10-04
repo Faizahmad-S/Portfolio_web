@@ -76,13 +76,14 @@
 								The system converts messy CSV transaction data into decision-ready business intelligence covering customer behavior, product performance, and sales growth trends.
 							</p>
 
-							<h2>Process</h2>
+							<h2>What I Did</h2>
+
 							<ul>
-								<li>Cleaned and standardized raw retail CSV data, converting integer dates to SQL DATE format and resolving missing demographic fields using <strong>COALESCE()</strong>.</li>
-								<li>Performed exploratory data analysis to identify business boundaries and calculate core KPIs such as <strong>Total Sales, Total Orders, and Active Customers</strong>.</li>
-								<li>Applied SQL window functions to analyze <strong>time trends and calculate moving averages</strong> for long-term pricing patterns.</li>
-								<li>Implemented <strong>Year-over-Year product analysis</strong> using <strong>LAG()</strong> to identify growth and decline trends across product categories.</li>
-								<li>Built <strong>customer segmentation logic</strong> using CTEs and CASE statements to classify customers into <strong>VIP, Regular, and New tiers</strong>.</li>
+							<li><strong>Turned 6 disconnected CSV files into one clean analytical model,</strong> fixing integer-formatted dates, missing gender values and inconsistent country labels, by casting to SQL DATE, using COALESCE() across customer files and standardising values with CASE in PostgreSQL.</li>
+							<li><strong>Established the business baseline</strong> of Total Sales, Total Orders and Active Customers, plus the date and customer-age range of the data, by writing EDA queries that summarise every KPI in one result set.</li>
+							<li><strong>Identified which bike models were growing and which were declining</strong> year over year by building LAG() comparisons and moving averages with SQL window functions.</li>
+							<li><strong>Revealed a major retention opportunity,</strong> with 85.4% of customers classed as New, by segmenting customers into VIP, Regular and New tiers on spend and lifespan using CTEs and CASE logic.</li>
+							<li><strong>Gave stakeholders self-serve Customer and Product dashboards</strong> from a single reporting layer by publishing optimised SQL views as the data source for Power BI.</li>
 							</ul>
 
 							<h2>Key Insights</h2>

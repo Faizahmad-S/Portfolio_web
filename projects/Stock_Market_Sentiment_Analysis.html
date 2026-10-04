@@ -89,34 +89,13 @@
 		</p>
 
 
-		<h2>Process</h2>
+		<h2>What I Did</h2>
 
 		<ul>
-
-		<li>
-		Wrote a Python scraper for Finviz news tables and scheduled it to run daily with
-		<strong>GitHub Actions</strong>, saving each run as a timestamped CSV.
-		</li>
-
-		<li>
-		Merged, cleaned and de-duplicated the scraped files with <strong>pandas</strong>.
-		</li>
-
-		<li>
-		Scored every headline with <strong>VADER</strong> and <strong>TextBlob</strong> and bucketed scores
-		into positive, neutral and negative.
-		</li>
-
-		<li>
-		Evaluated both models against the labelled Kaggle dataset using accuracy, per-class F1 and
-		confusion matrices.
-		</li>
-
-		<li>
-		Pulled daily opening and closing prices with <strong>yfinance</strong> and compared Apple's daily
-		mean sentiment with its price movement.
-		</li>
-
+		<li><strong>Built a daily news dataset for Apple, Amazon, Alphabet and Walmart with no manual effort</strong> by writing a Python scraper for Finviz and scheduling it with GitHub Actions.</li>
+		<li><strong>Chose the more reliable model despite its lower accuracy,</strong> VADER (55.0%, negative F1 0.32) over TextBlob (58.5%, negative F1 0.13), by benchmarking both on 4,846 labelled headlines using per-class F1 and confusion matrices.</li>
+		<li><strong>Showed that Apple's news sentiment and share price moved together from 10 to 19 September 2024, then split at the iPhone 16 launch,</strong> by joining daily mean VADER sentiment with yfinance opening and closing prices.</li>
+		<li><strong>Made every result reproducible</strong> by packaging the pipeline as Python modules and a Jupyter notebook that regenerates all figures.</li>
 		</ul>
 
 

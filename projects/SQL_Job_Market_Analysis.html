@@ -78,13 +78,13 @@
 								The analysis focused on five business questions: top-paying jobs, required skills, most in-demand skills, highest-paying skills, and the optimal skill mix based on both demand and salary.
 							</p>
 
-							<h2>Process</h2>
+							<h2>What I Did</h2>
+
 							<ul>
-								<li>Queried job posting data to identify the <strong>top-paying Data Analyst roles</strong>, focusing on remote jobs and London-based opportunities with available salary data.</li>
-								<li>Joined job postings with skills tables to determine which tools and technologies appear most often in high-paying analyst roles.</li>
-								<li>Calculated the <strong>most in-demand skills</strong> across all Data Analyst postings using grouped skill frequency analysis.</li>
-								<li>Computed <strong>average salary by skill</strong> to identify technical abilities associated with stronger compensation.</li>
-								<li>Combined <strong>demand count and salary averages</strong> to identify the most optimal skills to learn for long-term career return.</li>
+							<li><strong>Ranked the 10 highest-paying Data Analyst roles</strong> for remote and London jobs with published salaries by filtering postings and joining company data in PostgreSQL.</li>
+							<li><strong>Identified SQL as the most in-demand analyst skill,</strong> appearing in 180,369 postings ahead of Excel (131,822) and Python (116,082), by counting skill frequency across all Data Analyst postings with multi-table joins.</li>
+							<li><strong>Found which skills command the highest pay,</strong> with niche tools such as FastAPI and PyTorch at the top, by calculating average salary per skill across every salaried posting.</li>
+							<li><strong>Pinpointed the five best skills to learn (SQL, Tableau, Python, Excel and Power BI),</strong> ranked on both demand and average salary for remote roles, by combining two CTEs and keeping only skills with more than 10 postings.</li>
 							</ul>
 
 							<h2>Key Insights</h2>

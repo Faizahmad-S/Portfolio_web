@@ -79,35 +79,13 @@
 		</p>
 
 
-		<h2>Process</h2>
+		<h2>What I Did</h2>
 
 		<ul>
-
-		<li>
-		Cleaned the dataset by removing duplicate rows and standardizing
-		company, industry, and country fields.
-		</li>
-
-		<li>
-		Converted text values into numeric and date formats and created a
-		clean analytical table called <strong>fact_layoffs</strong>.
-		</li>
-
-		<li>
-		Aggregated layoffs by company to identify organizations responsible
-		for the largest workforce reductions.
-		</li>
-
-		<li>
-		Analyzed layoffs by industry and country to determine which sectors
-		and regions were most affected.
-		</li>
-
-		<li>
-		Used time-based analysis and window functions to track how layoffs
-		evolved month-by-month and rank companies by layoffs each year.
-		</li>
-
+		<li><strong>Produced a clean, analysis-ready table (fact_layoffs)</strong> with duplicates removed and industry and country labels standardised by using ROW_NUMBER() to de-duplicate and converting text fields to numeric and date types.</li>
+		<li><strong>Identified the companies behind the biggest layoffs,</strong> including a single event of 12,000 employees and repeated cuts at Amazon, Meta, Google and Microsoft, by aggregating total layoffs by company.</li>
+		<li><strong>Showed which industries and countries were hit hardest,</strong> with Consumer, Retail and Transportation leading and the United States accounting for the largest share, by grouping layoffs by industry and country.</li>
+		<li><strong>Pinpointed when layoffs peaked,</strong> a sharp surge in late 2022 and early 2023, by tracking monthly totals and ranking companies each year with window functions.</li>
 		</ul>
 
 
