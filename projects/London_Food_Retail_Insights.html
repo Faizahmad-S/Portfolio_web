@@ -1,0 +1,283 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+-->
+<html>
+	<head>
+		<title>London Food Retail Insights - Faizahmad-S</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta property="og:title" content="London Food Retail Insights" />
+		<meta property="og:description" content="Food hygiene ratings for 79,726 London food businesses, from the FSA API to a 15-step SQL EDA: data quality audit, borough benchmarks, a business-mix test and Pareto analysis. Python, PostgreSQL." />
+		<meta property="og:image" content="https://faizahmad-s.github.io/Portfolio_web/images/Food%20Retail-Cover.png" />
+		<meta property="og:url" content="https://faizahmad-s.github.io/Portfolio_web/projects/London_Food_Retail_Insights.html" />
+		<meta property="og:type" content="website" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+
+		<style>
+			.image-stack .image {
+				display:block;
+				margin-bottom:1.5rem;
+			}
+			.post ul.actions {
+				position: relative;
+				z-index: 2;
+				flex-wrap: wrap;
+			}
+		</style>
+	</head>
+
+	<body class="is-preload">
+
+	<a id="top"></a>
+
+	<div id="wrapper">
+
+		<header id="header">
+			<a href="../index.html" class="logo">Food Retail Insights</a>
+		</header>
+
+		<nav id="nav">
+			<ul class="links">
+				<li><a href="../index.html">Projects</a></li>
+				<li class="active"><a href="#">Project Details</a></li>
+			</ul>
+		</nav>
+
+		<div id="main">
+
+		<section class="post">
+
+		<div class="image main">
+			<img src="../images/Food Retail-Cover.png" alt="London Food Retail Insights Cover"/>
+		</div>
+
+		<div class="row">
+
+		<!-- LEFT COLUMN -->
+		<div class="col-8 col-12-small">
+
+		<h2>Purpose</h2>
+
+		<p>
+		How good are London's food businesses, and where are the poor ones? I took the Food Standards Agency's
+		Food Hygiene Rating data for every food business in London and worked through it from the API to a findings deck.
+		</p>
+
+		<p>
+		I also wanted a repeatable way to explore a new dataset: a fixed run of questions that goes from
+		"can I trust this data?" to "what should someone do with it?", with one SQL file per step.
+		</p>
+
+
+		<h2>Tools</h2>
+
+		<p><strong>Python | pandas | SQLAlchemy | PostgreSQL | Window Functions | CTEs | Jupyter | VS Code</strong></p>
+
+
+		<h2>Summary</h2>
+
+		<p>
+		I pulled 79,727 records for 33 London local authorities from the FSA API, flattened and cleaned them in pandas,
+		and loaded them into PostgreSQL. The analysis runs across 15 SQL scripts: structure, a data quality audit,
+		distributions, segment benchmarks, change over time, rating freshness and relationships between the inspection scores.
+		</p>
+
+		<p>
+		The audit changed the whole analysis. 9,887 businesses (12.4%) have no real rating and carry a fake 1901 date,
+		so I built one clean view, <code>fsa_rated</code>, that every later query reads from.
+		</p>
+
+
+		<h2>What I Did</h2>
+
+		<ul>
+		<li><strong>Stopped every percentage being understated (five-star would have read 59.9% instead of 68.3%)</strong> by auditing the data first and finding that the 9,887 unrated businesses and the 1901 placeholder dates were the same rows, then filtering them out in a single SQL view.</li>
+		<li><strong>Found a 39-point gap in five-star share between the best and worst boroughs</strong> (City of London 87.8%, Newham 49.1%) by benchmarking every borough against the London average with <code>RANK()</code>, ignoring groups under 30 businesses.</li>
+		<li><strong>Showed the gap isn't just down to what businesses sell</strong> by using a CTE to work out what each borough should score for its mix of business types. Newham should average 4.43 and actually averages 3.94.</li>
+		<li><strong>Traced where the poor ratings sit: 8 of 33 boroughs hold 53% of them</strong>, and "Retailers - other" make up 19.1% of businesses but 30.8% of 0-2 ratings, using running totals and <code>FILTER</code>.</li>
+		<li><strong>Pinned down which inspection score separates failing businesses from excellent ones</strong> (confidence in management, a 12.2-point gap against 8.7 for hygiene) with conditional averages and <code>CORR()</code>.</li>
+		</ul>
+
+
+		<h2>Key Insights</h2>
+
+		<ul>
+
+		<li>
+		Most businesses are doing well: <strong>68.3%</strong> are rated 5 and <strong>86.0%</strong> are rated 4 or 5.
+		</li>
+
+		<li>
+		The risk is in a thin tail. <strong>5.5%</strong> are rated 0 to 2, which is still <strong>3,857</strong> premises, and 283 of them are rated 0.
+		</li>
+
+		<li>
+		Newham, Waltham Forest and Ealing sit well below what their business mix predicts, while Kensington and Chelsea,
+		the City of London and Merton beat it.
+		</li>
+
+		<li>
+		Recent inspections look worse (6 to 9% rated 0-2 against about 1% in 2022-23), but that's most likely a
+		<strong>selection effect</strong>: poor performers get re-inspected sooner. I've reported it as a limit, not a decline.
+		</li>
+
+		<li>
+		Ratings are fairly current: <strong>45.5%</strong> were awarded in the last 12 months and only <strong>3.7%</strong> are over five years old.
+		</li>
+
+		</ul>
+
+
+		<h2>Outcome</h2>
+
+		<p>
+		A reproducible workflow from API to insight: two notebooks, 15 ordered SQL scripts, one clean analysis view and a
+		10-slide findings deck. Next I'd like to join deprivation data to test why some boroughs score lower, and build a Power BI dashboard on <code>fsa_rated</code>.
+		</p>
+
+		<hr>
+
+		<h3>Project Links</h3>
+
+		<ul class="actions">
+		<li><a href="https://github.com/Faizahmad-S/London-Food-Retail-Insights" class="button primary" target="_blank">View GitHub</a></li>
+		<li><a href="https://github.com/Faizahmad-S/London-Food-Retail-Insights/blob/main/London_Food_Retail_Insights.pptx" class="button" target="_blank">Findings Deck</a></li>
+		<li><a href="../index.html" class="button">Back to Projects</a></li>
+		<li><a href="#top" class="button scrolly">Back to Top</a></li>
+		</ul>
+
+		</div>
+
+
+		<!-- RIGHT COLUMN IMAGES -->
+		<div class="col-4 col-12-small image-stack">
+
+		<span class="image fit">
+		<img src="../Project Image/Food Retail/1_data_quality_audit.png" alt="Data quality audit scorecard"/>
+		</span>
+
+		<span class="image fit">
+		<img src="../Project Image/Food Retail/2_rating_distribution.png" alt="Rating distribution"/>
+		</span>
+
+		<span class="image fit">
+		<img src="../Project Image/Food Retail/3_borough_five_star_share.png" alt="Five-star share by borough"/>
+		</span>
+
+		<span class="image fit">
+		<img src="../Project Image/Food Retail/4_mix_adjusted_gap.png" alt="Actual vs expected rating given business mix"/>
+		</span>
+
+		<span class="image fit">
+		<img src="../Project Image/Food Retail/5_business_type_five_star_share.png" alt="Five-star share by business type"/>
+		</span>
+
+		<span class="image fit">
+		<img src="../Project Image/Food Retail/6_where_poor_ratings_sit.png" alt="Where poor ratings sit"/>
+		</span>
+
+		<span class="image fit">
+		<img src="../Project Image/Food Retail/7_subscore_gap_and_freshness.png" alt="Sub-score gap and rating freshness"/>
+		</span>
+
+		</div>
+
+		</div>
+
+		</section>
+
+		</div>
+
+	</div>
+
+
+	<script src="../assets/js/jquery.min.js"></script>
+	<script src="../assets/js/jquery.scrollex.min.js"></script>
+	<script src="../assets/js/jquery.scrolly.min.js"></script>
+	<script src="../assets/js/browser.min.js"></script>
+	<script src="../assets/js/breakpoints.min.js"></script>
+	<script src="../assets/js/util.js"></script>
+	<script src="../assets/js/main.js"></script>
+
+	
+	<!-- ===== Image Lightbox (click any project image to view full screen) ===== -->
+	<style>
+		#main .post .image img { cursor: zoom-in; transition: opacity 0.2s; }
+		#main .post .image img:hover { opacity: 0.9; }
+		.lightbox-overlay {
+			display: none;
+			position: fixed;
+			inset: 0;
+			z-index: 10000;
+			background: rgba(10, 12, 16, 0.95);
+			justify-content: center;
+			align-items: center;
+			padding: 2rem;
+			cursor: zoom-out;
+		}
+		.lightbox-overlay.open { display: flex; }
+		.lightbox-overlay img {
+			max-width: 95vw;
+			max-height: 92vh;
+			width: auto;
+			height: auto;
+			box-shadow: 0 10px 50px rgba(0,0,0,0.6);
+			border-radius: 4px;
+		}
+		.lightbox-close {
+			position: fixed;
+			top: 1rem;
+			right: 1.5rem;
+			font-size: 2.5rem;
+			line-height: 1;
+			color: #fff;
+			background: none;
+			border: none;
+			cursor: pointer;
+			z-index: 10001;
+			font-family: inherit;
+		}
+		.lightbox-hint {
+			position: fixed;
+			bottom: 1rem;
+			left: 50%;
+			transform: translateX(-50%);
+			color: rgba(255,255,255,0.6);
+			font-size: 0.8rem;
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+		}
+	</style>
+	<div class="lightbox-overlay" id="lightbox" role="dialog" aria-label="Full size image viewer">
+		<button class="lightbox-close" aria-label="Close">&times;</button>
+		<img src="" alt="" />
+		<span class="lightbox-hint">Click anywhere or press Esc to close</span>
+	</div>
+	<script>
+	(function () {
+		var overlay = document.getElementById('lightbox');
+		var overlayImg = overlay.querySelector('img');
+		var images = document.querySelectorAll('#main .post .image img');
+		images.forEach(function (img) {
+			img.addEventListener('click', function () {
+				overlayImg.src = img.src;
+				overlayImg.alt = img.alt || '';
+				overlay.classList.add('open');
+				document.body.style.overflow = 'hidden';
+			});
+		});
+		function closeLightbox() {
+			overlay.classList.remove('open');
+			overlayImg.src = '';
+			document.body.style.overflow = '';
+		}
+		overlay.addEventListener('click', closeLightbox);
+		document.addEventListener('keydown', function (e) {
+			if (e.key === 'Escape') closeLightbox();
+		});
+	})();
+	</script>
+
+	</body>
+</html>
